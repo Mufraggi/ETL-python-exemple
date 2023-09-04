@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 
-class PokemonRowRepository:
+class PokemonRawRepository:
     def __init__(self, db_url, db_name, collection_name):
         self.client = MongoClient(db_url)
         self.db = self.client[db_name]
@@ -15,8 +15,8 @@ class PokemonRowRepository:
 
 
 def get_pokemon_row_repository():
-    db_url = "mongodb://localhost:27017/"  # L'URL de connexion MongoDB
+    db_url = "mongodb://localhost:27017/"
     db_name = "data_warehouse"
     collection_name = "pokemon"
 
-    return PokemonRowRepository(db_url, db_name, collection_name)
+    return PokemonRawRepository(db_url, db_name, collection_name)

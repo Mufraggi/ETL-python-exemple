@@ -2,7 +2,7 @@ import json
 
 from src.api.pokemon_api_client import fetch_pokemon_data
 from src.receivers.pokemon_sync_production import queue_sync_production
-from src.repository.pokemon_row_repository import get_pokemon_row_repository
+from src.repository.pokemon_raw_repository import get_pokemon_row_repository
 
 repository = get_pokemon_row_repository()
 

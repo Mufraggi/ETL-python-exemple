@@ -1,7 +1,7 @@
 import requests
 from pydantic import ValidationError
 
-from src.domain.pokemon_row import PokemonModel
+from src.domain.pokemon_raw import PokemonModel
 
 
 def fetch_pokemon_data(url, pokemon_id):
@@ -12,11 +12,11 @@ def fetch_pokemon_data(url, pokemon_id):
             pokemon = PokemonModel(**pokemon_data)
             return pokemon
         else:
-            print(f"La requête a échoué avec le code de statut {response.status_code}")
+            print(f"The request failed with status code {response.status_code}")
             return None
     except requests.exceptions.RequestException as e:
-        print(f"Une erreur s'est produite lors de la requête : {e}")
+        print(f"An error occurred during the request: {e}")
         return None
     except ValidationError as e:
-        print(f"Erreur de validation du modèle : {e}")
+        print(f"An error occurred during the request: {e}")
         return None

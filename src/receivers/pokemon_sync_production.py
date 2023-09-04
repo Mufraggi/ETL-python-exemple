@@ -3,7 +3,7 @@ import json
 from bson import ObjectId
 
 from src.repository.pokemon_production_repository import get_pokemon_Production_repository
-from src.repository.pokemon_row_repository import get_pokemon_row_repository
+from src.repository.pokemon_raw_repository import get_pokemon_row_repository
 
 repository_row = get_pokemon_row_repository()
 repository_prod = get_pokemon_Production_repository()
